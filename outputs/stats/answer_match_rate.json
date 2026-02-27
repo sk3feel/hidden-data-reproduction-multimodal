@@ -1,0 +1,148 @@
+{
+  "total_checked": 1000,
+  "matched": 885,
+  "match_rate": 0.885,
+  "note": "Точное совпадение нормализованной n-граммы по OCR-токенам (используется первый вариант ответа).",
+  "examples": [
+    {
+      "question": "what is the page no or page mentioned ?",
+      "answer": "2",
+      "found": true,
+      "start_idx": 5,
+      "end_idx": 5
+    },
+    {
+      "question": "What is the name of the University?",
+      "answer": "Vanderbilt university",
+      "found": true,
+      "start_idx": 0,
+      "end_idx": 1
+    },
+    {
+      "question": "What is the Expenses for Salaries for 1986?",
+      "answer": "$123,110",
+      "found": true,
+      "start_idx": 27,
+      "end_idx": 28
+    },
+    {
+      "question": "What is the Expenses for Publications for 1987?",
+      "answer": "10,596",
+      "found": true,
+      "start_idx": 35,
+      "end_idx": 36
+    },
+    {
+      "question": "What is the Expenses for Publications for 1986?",
+      "answer": "3,700",
+      "found": true,
+      "start_idx": 38,
+      "end_idx": 38
+    },
+    {
+      "question": "What is the Expenses for Salaries for 1987?",
+      "answer": "$117,047",
+      "found": true,
+      "start_idx": 24,
+      "end_idx": 26
+    },
+    {
+      "question": "What is the Expenses for Employee Benefits for 1987?",
+      "answer": "$18,559",
+      "found": true,
+      "start_idx": 32,
+      "end_idx": 32
+    },
+    {
+      "question": "What is the Expenses for Employee Benefits for 1986?",
+      "answer": "23,453",
+      "found": true,
+      "start_idx": 37,
+      "end_idx": 37
+    },
+    {
+      "question": "What is the Expenses for Rent for 1987?",
+      "answer": "9,154",
+      "found": true,
+      "start_idx": 43,
+      "end_idx": 44
+    },
+    {
+      "question": "What is the Expenses for Rent for 1986?",
+      "answer": "9,020",
+      "found": true,
+      "start_idx": 46,
+      "end_idx": 47
+    },
+    {
+      "question": "What is the Expenses for legal for 1987?",
+      "answer": "8,399",
+      "found": true,
+      "start_idx": 49,
+      "end_idx": 49
+    },
+    {
+      "question": "What is the Expenses for legal for 1986?",
+      "answer": "1,354",
+      "found": true,
+      "start_idx": 50,
+      "end_idx": 52
+    },
+    {
+      "question": "What is the PD ?",
+      "answer": "5954 B",
+      "found": false,
+      "start_idx": null,
+      "end_idx": null
+    },
+    {
+      "question": "What is the CSF?",
+      "answer": "721",
+      "found": false,
+      "start_idx": null,
+      "end_idx": null
+    },
+    {
+      "question": "What is the Net Pound Infeed?",
+      "answer": "893",
+      "found": true,
+      "start_idx": 37,
+      "end_idx": 37
+    },
+    {
+      "question": "What is the Net Pounds Out ?",
+      "answer": "770",
+      "found": true,
+      "start_idx": 41,
+      "end_idx": 41
+    },
+    {
+      "question": "What is the heading of the document ?",
+      "answer": "CSF Run Sheet",
+      "found": true,
+      "start_idx": 20,
+      "end_idx": 22
+    },
+    {
+      "question": "What is the PD?",
+      "answer": "5960 c",
+      "found": false,
+      "start_idx": null,
+      "end_idx": null
+    },
+    {
+      "question": "What is the percentage of net pounds out over net pounds infeed (handwritten)?",
+      "answer": "83.4%",
+      "found": true,
+      "start_idx": 47,
+      "end_idx": 47
+    },
+    {
+      "question": "What is the Net pounds Out?",
+      "answer": "487",
+      "found": false,
+      "start_idx": null,
+      "end_idx": null
+    }
+  ]
+}

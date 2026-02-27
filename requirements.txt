@@ -1,0 +1,6 @@
+datasets>=2.16.0
+Pillow>=10.0.0
+matplotlib>=3.7.0
+jupyter>=1.0.0
+notebook>=7.0.0
+
