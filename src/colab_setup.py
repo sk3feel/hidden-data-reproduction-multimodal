@@ -16,7 +16,7 @@ DEFAULT_REPO_URL = os.getenv(
     "https://github.com/sk3feel/hidden-data-reproduction-multimodal.git",
 )
 DEFAULT_DATASET_REPO = os.getenv("HF_DATASET_REPO", "sk3feel/docvqa-privacy-data")
-DEFAULT_COMET_WORKSPACE = os.getenv("COMET_WORKSPACE", "karimkramin")
+DEFAULT_COMET_WORKSPACE = os.getenv("COMET_WORKSPACE", "scfeel")
 
 
 def _in_colab() -> bool:
@@ -84,14 +84,10 @@ def init_comet_experiment(
 ):
     import comet_ml
 
-    experiment = comet_ml.start(
+    experiment = comet_ml.Experiment(
         api_key=api_key,
         workspace=workspace,
         project_name=project_name,
-        mode="get_or_create",
-        auto_param_logging=False,
-        auto_metric_logging=False,
-        log_code=False,
     )
     return experiment
 
@@ -114,7 +110,7 @@ def setup_colab(
         default=DEFAULT_COMET_WORKSPACE,
         required=True,
     )
-    comet_project_name = get_secret("COMET_PROJECT_NAME", default="docvqa-privacy", required=True)
+    comet_project_name = get_secret("COMET_PROJECT_NAME", default="qwen3-1", required=True)
 
     project_root = ensure_repo_cloned(repo_url=repo_url, clone_dir=clone_dir)
     install_requirements(project_root=project_root)

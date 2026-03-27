@@ -196,7 +196,7 @@
 ### Hugging Face Dataset Repo
 
 Dataset repo:
-- `karimkramin/docvqa-privacy-data`
+- `sk3feel/docvqa-privacy-data`
 
 Туда загружается dataset snapshot через `src/upload_to_hf.py`.
 
@@ -215,7 +215,7 @@ Dataset repo:
 ### Hugging Face Model Repo
 
 Model repo:
-- `karimkramin/docvqa-privacy-checkpoints`
+- `sk3feel/docvqa-privacy-checkpoints`
 
 Туда загружаются checkpoints и adapters:
 - `florence2/epoch_1`
@@ -247,10 +247,10 @@ Comet используется для experiment tracking и хранения п
 - итоговых таблиц анализа.
 
 Workspace:
-- `karimkramin`
+- `scfeel`
 
 Project:
-- `docvqa-privacy`
+- `qwen3-1`
 
 В Comet логируются:
 - метрики;
@@ -279,8 +279,8 @@ Project:
 ### Что делать после перезапуска сессии
 
 Если runtime перезапустился:
-- benchmark и generative JSONL заново подтягиваются из `karimkramin/docvqa-privacy-data`;
-- checkpoints заново подтягиваются из `karimkramin/docvqa-privacy-checkpoints`;
+- benchmark и generative JSONL заново подтягиваются из `sk3feel/docvqa-privacy-data`;
+- checkpoints заново подтягиваются из `sk3feel/docvqa-privacy-checkpoints`;
 - если локальные CSV результатов уже отсутствуют, `24_final_analysis.ipynb` сначала пытается читать `artifacts/privacy_attacks/...`, а при отсутствии файлов использует fallback через Comet API.
 
 То есть анализ не привязан к одной конкретной машине, пока:
@@ -292,7 +292,7 @@ Project:
 
 `notebooks/24_final_analysis.ipynb` устроен так:
 - основной путь: читать локальные CSV из `artifacts/privacy_attacks/mia/` и `artifacts/privacy_attacks/extraction/`;
-- fallback: если CSV отсутствуют, notebook пытается скачать `.csv` assets из Comet по именам experiments внутри `docvqa-privacy`.
+- fallback: если CSV отсутствуют, notebook пытается скачать `.csv` assets из Comet по именам experiments внутри `qwen3-1`.
 
 Это важно для случаев, когда:
 - analysis запускается на другой машине;
@@ -307,12 +307,12 @@ Project:
 
 ```dotenv
 HF_TOKEN=""
-HF_DATASET_REPO="karimkramin/docvqa-privacy-data"
-HF_MODEL_REPO="karimkramin/docvqa-privacy-checkpoints"
+HF_DATASET_REPO="sk3feel/docvqa-privacy-data"
+HF_MODEL_REPO="sk3feel/docvqa-privacy-checkpoints"
 
 COMET_API_KEY=""
-COMET_WORKSPACE="karimkramin"
-COMET_PROJECT_NAME="docvqa-privacy"
+COMET_WORKSPACE="scfeel"
+COMET_PROJECT_NAME="qwen3-1"
 
 COURSE_WORK2026_REPO_URL="https://github.com/sk3feel/hidden-data-reproduction-multimodal.git"
 ```
@@ -530,13 +530,13 @@ python -m ipykernel install --user --name course_work2026_venv --display-name "P
 ### Загрузка dataset snapshot на Hugging Face Hub
 
 ```powershell
-.\.venv\Scripts\python.exe src\upload_to_hf.py --repo-id karimkramin/docvqa-privacy-data
+.\.venv\Scripts\python.exe src\upload_to_hf.py --repo-id sk3feel/docvqa-privacy-data
 ```
 
 ### Скачивание dataset snapshot с Hugging Face Hub
 
 ```powershell
-.\.venv\Scripts\python.exe src\download_from_hf.py --repo-id karimkramin/docvqa-privacy-data
+.\.venv\Scripts\python.exe src\download_from_hf.py --repo-id sk3feel/docvqa-privacy-data
 ```
 
 ### Аудит анонимизации
