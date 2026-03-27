@@ -1,0 +1,26 @@
+Accuracy: 0.836667
+
+Classification report:
+                    precision    recall  f1-score   support
+
+           ADDRESS     0.6667    0.6667    0.6667         9
+           BOOLEAN     1.0000    1.0000    1.0000        15
+    CATEGORY_LABEL     0.8889    0.6154    0.7273        26
+           CONTACT     0.7000    0.5385    0.6087        13
+         DATE_TIME     0.8182    0.9474    0.8780        19
+DOCUMENT_REFERENCE     1.0000    0.9500    0.9744        20
+         FREE_TEXT     0.6111    0.8462    0.7097        13
+        IDENTIFIER     0.4737    0.4286    0.4500        21
+          LOCATION     1.0000    0.8824    0.9375        17
+             MONEY     1.0000    1.0000    1.0000        21
+          ORG_NAME     1.0000    0.7692    0.8696        26
+             OTHER     1.0000    0.7500    0.8571         4
+        PERCENTAGE     1.0000    1.0000    1.0000        18
+       PERSON_NAME     0.8077    1.0000    0.8936        21
+          QUANTITY     0.8636    0.8636    0.8636        22
+        ROLE_TITLE     0.5789    1.0000    0.7333        11
+      TITLE_HEADER     0.8462    0.9167    0.8800        24
+
+          accuracy                         0.8367       300
+         macro avg     0.8385    0.8338    0.8264       300
+      weighted avg     0.8510    0.8367    0.8353       300

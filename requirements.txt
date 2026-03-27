@@ -3,4 +3,11 @@ Pillow>=10.0.0
 matplotlib>=3.7.0
 jupyter>=1.0.0
 notebook>=7.0.0
-
+pandas>=2.2.0
+tqdm>=4.66.0
+gigachat>=0.1.39
+transformers>=4.45.0
+accelerate>=0.34.0
+python-dotenv>=1.0.1
+huggingface_hub>=0.25.0
+comet_ml>=3.49.0

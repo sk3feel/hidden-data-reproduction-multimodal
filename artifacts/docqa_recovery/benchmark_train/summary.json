@@ -1,0 +1,157 @@
+{
+  "manifest_path": "C:\\Users\\scfeel\\DEV\\hse\\3year-2sem\\course_work2026\\artifacts\\docqa_recovery\\benchmark_train\\manifest.jsonl",
+  "subset_csv": "C:\\Users\\scfeel\\DEV\\hse\\3year-2sem\\course_work2026\\artifacts\\finetuning\\metadata\\train_subset_800.csv",
+  "total_seen": 800,
+  "total_kept": 800,
+  "skipped_no_span": 0,
+  "skipped_no_image": 0,
+  "skipped_no_bbox": 0,
+  "type_counts": {
+    "ORG": 133,
+    "AMOUNT": 134,
+    "PERSON": 133,
+    "DATE": 134,
+    "CONTACT_ADR": 133,
+    "ID": 133
+  },
+  "scenarios": [
+    {
+      "scenario_id": "original",
+      "ocr_strategy": "none",
+      "image_strategy": "none",
+      "context_window": 0
+    },
+    {
+      "scenario_id": "ocr_none__img_black__k_0",
+      "ocr_strategy": "none",
+      "image_strategy": "black",
+      "context_window": 0
+    },
+    {
+      "scenario_id": "ocr_none__img_white__k_0",
+      "ocr_strategy": "none",
+      "image_strategy": "white",
+      "context_window": 0
+    },
+    {
+      "scenario_id": "ocr_none__img_blur__k_0",
+      "ocr_strategy": "none",
+      "image_strategy": "blur",
+      "context_window": 0
+    },
+    {
+      "scenario_id": "ocr_drop__img_none__k_0",
+      "ocr_strategy": "drop",
+      "image_strategy": "none",
+      "context_window": 0
+    },
+    {
+      "scenario_id": "ocr_drop__img_black__k_0",
+      "ocr_strategy": "drop",
+      "image_strategy": "black",
+      "context_window": 0
+    },
+    {
+      "scenario_id": "ocr_drop__img_white__k_0",
+      "ocr_strategy": "drop",
+      "image_strategy": "white",
+      "context_window": 0
+    },
+    {
+      "scenario_id": "ocr_drop__img_blur__k_0",
+      "ocr_strategy": "drop",
+      "image_strategy": "blur",
+      "context_window": 0
+    },
+    {
+      "scenario_id": "ocr_mask__img_none__k_0",
+      "ocr_strategy": "mask",
+      "image_strategy": "none",
+      "context_window": 0
+    },
+    {
+      "scenario_id": "ocr_mask__img_black__k_0",
+      "ocr_strategy": "mask",
+      "image_strategy": "black",
+      "context_window": 0
+    },
+    {
+      "scenario_id": "ocr_mask__img_white__k_0",
+      "ocr_strategy": "mask",
+      "image_strategy": "white",
+      "context_window": 0
+    },
+    {
+      "scenario_id": "ocr_mask__img_blur__k_0",
+      "ocr_strategy": "mask",
+      "image_strategy": "blur",
+      "context_window": 0
+    },
+    {
+      "scenario_id": "ocr_none__img_black__k_20",
+      "ocr_strategy": "none",
+      "image_strategy": "black",
+      "context_window": 20
+    },
+    {
+      "scenario_id": "ocr_none__img_white__k_20",
+      "ocr_strategy": "none",
+      "image_strategy": "white",
+      "context_window": 20
+    },
+    {
+      "scenario_id": "ocr_none__img_blur__k_20",
+      "ocr_strategy": "none",
+      "image_strategy": "blur",
+      "context_window": 20
+    },
+    {
+      "scenario_id": "ocr_drop__img_none__k_20",
+      "ocr_strategy": "drop",
+      "image_strategy": "none",
+      "context_window": 20
+    },
+    {
+      "scenario_id": "ocr_drop__img_black__k_20",
+      "ocr_strategy": "drop",
+      "image_strategy": "black",
+      "context_window": 20
+    },
+    {
+      "scenario_id": "ocr_drop__img_white__k_20",
+      "ocr_strategy": "drop",
+      "image_strategy": "white",
+      "context_window": 20
+    },
+    {
+      "scenario_id": "ocr_drop__img_blur__k_20",
+      "ocr_strategy": "drop",
+      "image_strategy": "blur",
+      "context_window": 20
+    },
+    {
+      "scenario_id": "ocr_mask__img_none__k_20",
+      "ocr_strategy": "mask",
+      "image_strategy": "none",
+      "context_window": 20
+    },
+    {
+      "scenario_id": "ocr_mask__img_black__k_20",
+      "ocr_strategy": "mask",
+      "image_strategy": "black",
+      "context_window": 20
+    },
+    {
+      "scenario_id": "ocr_mask__img_white__k_20",
+      "ocr_strategy": "mask",
+      "image_strategy": "white",
+      "context_window": 20
+    },
+    {
+      "scenario_id": "ocr_mask__img_blur__k_20",
+      "ocr_strategy": "mask",
+      "image_strategy": "blur",
+      "context_window": 20
+    }
+  ]
+}

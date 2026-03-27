@@ -1,0 +1,2 @@
+split_name,experiment_tag,n_total,n_rule,n_llm,n_error,n_other,rule_rate,llm_rate,error_rate,other_rate
+dev,field_labeling_v1,1000,458,542,0,5,0.458,0.542,0.0,0.005

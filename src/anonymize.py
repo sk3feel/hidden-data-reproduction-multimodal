@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter
 
 try:
     from .load_data import extract_ocr_tokens
@@ -26,20 +26,7 @@ def _token_text(token: Any) -> str:
     return str(token)
 
 
-def find_answer_span(ocr_tokens: list[Any], answer: str) -> tuple[int | None, int | None, bool]:
-    """
-    Ищет точное совпадение нормализованного ответа в OCR-токенах.
-    Возвращает (start_idx, end_idx, found), где end_idx включителен.
-    """
-    normalized_answer = normalize_text(answer)
-    answer_parts = normalized_answer.split()
-    if not answer_parts:
-        return None, None, False
-
-    # Нормализуем OCR и разворачиваем токены на под-токены.
-    # Это закрывает случаи вида:
-    # - ответ "3,700" -> ["3", "700"], OCR токен "3,700"
-    # - OCR разбиение "$117", ",", "047"
+def _flatten_ocr_tokens(ocr_tokens: list[Any]) -> tuple[list[str], list[int]]:
     flat_tokens: list[str] = []
     flat_to_orig_idx: list[int] = []
     for orig_idx, token in enumerate(ocr_tokens):
@@ -47,16 +34,46 @@ def find_answer_span(ocr_tokens: list[Any], answer: str) -> tuple[int | None, in
         for part in parts:
             flat_tokens.append(part)
             flat_to_orig_idx.append(orig_idx)
+    return flat_tokens, flat_to_orig_idx
 
+
+def find_all_answer_spans(ocr_tokens: list[Any], answer: str) -> list[tuple[int, int]]:
+    """
+    Ищет все точные совпадения нормализованного ответа в OCR-токенах.
+    Возвращает список пар (start_idx, end_idx), где end_idx включителен.
+    """
+    normalized_answer = normalize_text(answer)
+    answer_parts = normalized_answer.split()
+    if not answer_parts:
+        return []
+
+    flat_tokens, flat_to_orig_idx = _flatten_ocr_tokens(ocr_tokens)
     n = len(answer_parts)
+    spans: list[tuple[int, int]] = []
+    seen: set[tuple[int, int]] = set()
     for start in range(len(flat_tokens) - n + 1):
         window = flat_tokens[start : start + n]
-        if window == answer_parts:
-            start_orig = flat_to_orig_idx[start]
-            end_orig = flat_to_orig_idx[start + n - 1]
-            return start_orig, end_orig, True
+        if window != answer_parts:
+            continue
+        start_orig = flat_to_orig_idx[start]
+        end_orig = flat_to_orig_idx[start + n - 1]
+        span = (start_orig, end_orig)
+        if span not in seen:
+            spans.append(span)
+            seen.add(span)
+    return spans
 
-    return None, None, False
+
+def find_answer_span(ocr_tokens: list[Any], answer: str) -> tuple[int | None, int | None, bool]:
+    """
+    Ищет точное совпадение нормализованного ответа в OCR-токенах.
+    Возвращает (start_idx, end_idx, found), где end_idx включителен.
+    """
+    spans = find_all_answer_spans(ocr_tokens, answer)
+    if not spans:
+        return None, None, False
+    start_idx, end_idx = spans[0]
+    return start_idx, end_idx, True
 
 
 def _bbox_to_xyxy(bbox: Any, image_size: tuple[int, int] | None = None) -> tuple[int, int, int, int]:
@@ -117,6 +134,18 @@ def span_bbox_from_tokens(token_entries: list[dict[str, Any]], start_idx: int, e
     return min(xs1), min(ys1), max(xs2), max(ys2)
 
 
+def span_bboxes_from_spans(
+    token_entries: list[dict[str, Any]],
+    spans: list[tuple[int, int]],
+) -> list[tuple[int, int, int, int]]:
+    out: list[tuple[int, int, int, int]] = []
+    for start_idx, end_idx in spans:
+        bbox = span_bbox_from_tokens(token_entries, start_idx, end_idx)
+        if bbox is not None:
+            out.append(bbox)
+    return out
+
+
 def evaluate_match_rate(dataset_subset: list[dict[str, Any]], output_path: str = "outputs/stats/answer_match_rate.json") -> dict[str, Any]:
     total = 0
     matched = 0
@@ -159,14 +188,26 @@ def evaluate_match_rate(dataset_subset: list[dict[str, Any]], output_path: str =
     return result
 
 
-def mask_image(image: Image.Image, bbox: Any) -> Image.Image:
+def mask_image(
+    image: Image.Image,
+    bbox: Any,
+    strategy: str = "black",
+    blur_sigma: float = 12.0,
+) -> Image.Image:
     """
-    Закрашивает прямоугольник bbox черным и возвращает копию изображения.
+    Маскирует прямоугольник bbox и возвращает копию изображения.
     """
     out = image.copy()
-    draw = ImageDraw.Draw(out)
     x1, y1, x2, y2 = _bbox_to_xyxy(bbox, image_size=out.size)
-    draw.rectangle([x1, y1, x2, y2], fill="black")
+
+    if strategy == "blur":
+        crop = out.crop((x1, y1, x2, y2)).filter(ImageFilter.GaussianBlur(radius=blur_sigma))
+        out.paste(crop, (x1, y1, x2, y2))
+        return out
+
+    fill = "black" if strategy == "black" else "white"
+    draw = ImageDraw.Draw(out)
+    draw.rectangle([x1, y1, x2, y2], fill=fill)
     return out
 
 

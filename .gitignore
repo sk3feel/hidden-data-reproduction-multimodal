@@ -1,0 +1,24 @@
+.env
+
+# Virtual environments
+.venv/
+.venv_broken_20260326/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large benchmark images
+artifacts/docqa_recovery/benchmark/images/
+artifacts/docqa_recovery/benchmark_train/images/
+artifacts/docqa_recovery/benchmark_smoke/images/
+
+# Generated experiment outputs
+artifacts/privacy_attacks/
+artifacts/analysis/
+
+# Generative JSONL are distributed via Hugging Face dataset repo
+artifacts/finetuning_generative/*.jsonl

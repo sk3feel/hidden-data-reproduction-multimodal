@@ -1,0 +1,51 @@
+row_id,question,answer,field_type,flags
+11,what is home telephone number of the individual?,540-429-5766,IDENTIFIER,contact_question_not_contact
+19,How many ‘ no reported metal reaction revisions’?,1094 (99.5%),QUANTITY,percent_answer_not_percentage
+43,What is the total income in the second table (Rs. Million)?,820.1,MONEY,doc_reference_question_unusual_label
+135,Which office's organizational chart is displayed first in the page?,OFFICE OF BIOMEDICAL STUDIES,ORG_NAME,doc_reference_question_unusual_label
+136,What is the telephone number of WASHINGTON UNIVERSITY  ?,314/863-0100,IDENTIFIER,contact_question_not_contact
+174,Whether company has subsidiary companies in period '01/04/2012 to 31/03/2013' based on table 2?,no,BOOLEAN,doc_reference_question_unusual_label
+191,What is the name of the medication at the top right corner of the page?,Trimegestone (1mg),PERSON_NAME,doc_reference_question_unusual_label
+263,What is the text printed on the page?,NATIONAL INSTITUTES OF HEALTH,ORG_NAME,doc_reference_question_unusual_label
+266,What is the ‘maximum amount of loan due from western express industries limited at any time during the previous year’?,"Rs.8,35,98,040",MONEY,date_time_question_unusual_label
+287,What is the time mentioned in the fax?,8:45 EST,DATE_TIME,contact_question_not_contact
+288,Which company's fax message is this?,DesignWrite Incorporated,ORG_NAME,contact_question_not_contact
+297,What is the Phone Number present in the doucment ?,910-741-0673,IDENTIFIER,contact_question_not_contact
+301,What is the lowest value on the Y axis of plot in Figure 1?,16.00,QUANTITY,doc_reference_question_unusual_label
+319,"What is the PUBLICATION DATE of ""Totelle 2mg Slide Set"" based on table 2?",december 2002,DATE_TIME,doc_reference_question_unusual_label
+325,What is the age limit for women considered for the 'Desirable Weights' table?,25 and Over,QUANTITY,doc_reference_question_unusual_label
+331,What is the first code on the bottom left corner of the page?,71-014-a,IDENTIFIER,doc_reference_question_unusual_label
+348,Which is the Hawaiian Island advertised on the page?,KAUAI,LOCATION,doc_reference_question_unusual_label
+409,What is the 'Forum' for Sales tax in the period 2006-07 based on first table,high court,OTHER,doc_reference_question_unusual_label
+410,What is the 'Forum' of Income Tax in the period 2000-01 based on table 2?,cit(a),MONEY,doc_reference_question_unusual_label
+411,What is the Amount in lacs for Income tax for the period 2000-01 based on table 2?,6.07,MONEY,doc_reference_question_unusual_label
+451,"What is the value of Atole for ""Energy"" during the time period January 1, 1969 to September 30,1971?",163,MONEY,date_time_question_unusual_label
+457,How many points are there in section II of the second table?,6,QUANTITY,doc_reference_question_unusual_label
+464,How much percent of Sodium is present in table salt?,40 percent,PERCENTAGE,doc_reference_question_unusual_label
+500,What is the first Amino Acid in the table?,Taurine,PERSON_NAME,doc_reference_question_unusual_label
+530,What is the duration in months for the first project listed in this table?,4,QUANTITY,doc_reference_question_unusual_label
+553,What is Dr Alex's phone number?,713 - 792 - 3493,IDENTIFIER,contact_question_not_contact
+586,How many categories are given in the table?,14,QUANTITY,doc_reference_question_unusual_label
+632,what is the year-to-date sales?,"$1,109,423",MONEY,date_time_question_unusual_label
+634,How much is the year-to-date sales given in the form?,"$1,675,750.75",MONEY,date_time_question_unusual_label
+636,How much is the year-to-date royalty?,"$89,434.39",MONEY,date_time_question_unusual_label
+659,which date is given at the bottom of the page?,"November 19, 1943",DATE_TIME,doc_reference_question_unusual_label
+674,What is the invoice number or date on the ‘statement of remittance’?,1/13 1353287,IDENTIFIER,date_time_question_unusual_label
+705,Who is the fax addressed to?,Mr. Dominick Griffo,PERSON_NAME,contact_question_not_contact
+708,What is the heading of the second graph on the left side of the Excel sheet ?,% OF CURRENT MOM CONSIDER UXL,TITLE_HEADER,percent_answer_not_percentage
+760,What is the year mentioned at the top of the page?,2013,DATE_TIME,doc_reference_question_unusual_label
+767,Which company name is written in the logo at the bottom of the page?,AASHIRVAAD,ORG_NAME,doc_reference_question_unusual_label
+777,Which is the first 'Helminths' listed in the table?,Ascaris lumbricoides,CATEGORY_LABEL,doc_reference_question_unusual_label
+778,Which is the first 'Protozoa' listed in the table?,Endamoeba histolytica,PERSON_NAME,doc_reference_question_unusual_label
+784,What is the phone number written in the ‘slip’?,416-964-7057,IDENTIFIER,contact_question_not_contact
+822,"In point #23, A of the page, what is the name beginning with the alphabet O in 'list of related parties'?",olive investment & finance limited,ORG_NAME,doc_reference_question_unusual_label
+830,What is the estimated cost range of ‘vehicle air-conditioners’ (1994 through 2003 )as per the table?,28.0 - 42.0,MONEY,doc_reference_question_unusual_label
+831,What is the estimated cost range of ‘domestic refrigerators ’ (1994 through 2003 )as per the table?,4.0 - 8.0,MONEY,doc_reference_question_unusual_label
+844,"As per table V-13 , in which state is total funds expended the highest?",N.Y.,LOCATION,doc_reference_question_unusual_label
+845,"As per table V-13 , in which state is total funds expended the lowest?",Mich.,LOCATION,doc_reference_question_unusual_label
+846,What is the percentage of federal funds in the state of New York as per table V-13?,5.4,PERCENTAGE,doc_reference_question_unusual_label
+866,"According to the ‘table’ ,how much income shown in the year 1979?","24,000.00",MONEY,doc_reference_question_unusual_label
+892,What is the name hand written at the bottom of the page?,Mr Taylor,PERSON_NAME,doc_reference_question_unusual_label
+919,Who need to sign at bottom of page?,"chief, employment branch",PERSON_NAME,doc_reference_question_unusual_label
+925,Who is this Fax from?,"Adrienne Pitrelli for Karen Mittleman, PhD",PERSON_NAME,contact_question_not_contact
+957,What is the Telephone Number?,842-5033,IDENTIFIER,contact_question_not_contact

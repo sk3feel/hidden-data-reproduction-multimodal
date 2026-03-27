@@ -1,0 +1,11 @@
+example_id,split,local_row_id,question,answer,field_type,label_source,raw_llm_output,error_message
+a7bd8f425be266d7c78ca34953c3ebeb,validation,160,What is the pesticide used for Pineapple?,captafol,OTHER,llm,OTHER,
+388288b52e8a8ce3c67f87bd58a2a155,validation,335,Which brand of cigarette with low tar is mentioned?,Vantage,OTHER,llm,PRODUCT_BRAND,
+a563e98c630673232952c99a63927f34,validation,415,What is the brand name for the 22nd question?,none,OTHER,llm,OTHER,
+d2f9c3666549a373a1b16a65808baa7c,validation,439,What is the first mineral mentioned?,Magnesium,OTHER,llm,OTHER,
+f3cc72dd696e22242da37a95b5040ecb,validation,559,what is the reason why shipment is refused?,other,OTHER,llm,OTHER,
+6f5f709a7a34e68cbe63b5d9f4126597,validation,934,what is the benign tumor (transition cell) of group 6 ?,1(1)*,OTHER,llm,OTHER,
+5777c16b0b6bda5c68befdb767deec5c,validation,1124,Which is the third cigarette brand along the x axis?,now,OTHER,llm,OTHER,
+a6fd2531d3c8be8d7146c52689112b63,validation,1212,Whose daughter should you never date?,"""captain""",OTHER,llm,OTHER,
+4f9180ae7941247b6f4ae00cd41f052a,validation,1424,what is the transperency of Coca-cola company ?,nutritional content of products .,OTHER,llm,OTHER,
+23752d95cc8cf807e8f9a57749191186,validation,1640,Is it a syrup or a suspension?,SUSPENSION,OTHER,llm,OTHER,

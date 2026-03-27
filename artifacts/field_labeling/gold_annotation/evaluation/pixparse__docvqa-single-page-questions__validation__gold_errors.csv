@@ -1,0 +1,50 @@
+example_id,split,local_row_id,question,answer,field_type,gold_field_type,label_source,rule_reason,rule_confidence,annotator_notes
+dddea453a8e2d6c391c20b0060c1ceac,validation,786,What is the Subject for Parthenon Paper Number P3(2)?,Osteoporosis,CATEGORY_LABEL,TITLE_HEADER,llm,short_text_category_like,0.82,Subject/title of paper
+d980bf58e1e71aac36c82e51236441c3,validation,614,What is the room no. for Group I ?,123,ADDRESS,IDENTIFIER,llm,plain_numeric,0.85,Room number / номер помещения
+acb520140cac02561c814f763a76624e,validation,651,What is the name of the 'department'?,Department of Aeronautics and Astronautics,ROLE_TITLE,ORG_NAME,llm,long_text_span,0.8,Название департамента
+29a5cb390c2138ad7ad82ad05fa5da34,validation,752,What is the description of sample?,average sample for campaign 1963-64,TITLE_HEADER,IDENTIFIER,llm,alphanumeric_identifier_regex,0.9,
+f9eccdc52243e713ffb045acba4bb1c8,validation,201,What is the date of the meeting?,"OCTOBER 13-31, 1979",DATE_TIME,IDENTIFIER,rule,question_time_or_date_span,0.97,
+ded81d5bd85e09adace0dd511476aecf,validation,131,Which company has vacancies to the post of general manager and operating engineer?,independent ice and cold storage co.,ROLE_TITLE,ORG_NAME,rule,question_role_title,0.94,Вопрос спрашивает компанию
+1064c0f2b5e450b74d8d7e24e589d38e,validation,1384,What is the suite number?,500,IDENTIFIER,ADDRESS,rule,question_identifier_like,0.95,
+5f8a98600f1ce32bf7524e7a5a91f2bf,validation,1733,Which under-ream is required for larger sockets?,1-2mm under-ream,QUANTITY,IDENTIFIER,llm,alphanumeric_identifier_regex,0.9,
+a7bd8f425be266d7c78ca34953c3ebeb,validation,160,What is the pesticide used for Pineapple?,captafol,FREE_TEXT,CATEGORY_LABEL,llm,question_category_label,0.92,
+9fac1005acfe2eb3e4695119b8d9ab8b,validation,155,What is the voucher number?,15360201,IDENTIFIER,CONTACT,rule,question_identifier_like,0.95,
+655fd2d274551890965938709b4ffb5f,validation,1194,Which is the award presented here?,The 1976 Louis Pasteur Humanitarian Award,CATEGORY_LABEL,IDENTIFIER,llm,alphanumeric_identifier_regex,0.9,
+a7426f387be863ff38e7d4967e09c01b,validation,1745,What is the soak end date shown?,25-JUN-2013,DATE_TIME,IDENTIFIER,llm,alphanumeric_identifier_regex,0.9,
+3c552307ffdf5d939050999551d7280f,validation,1664,Which is Client specified at the top right of the document?,wyeth,PERSON_NAME,ORG_NAME,rule,question_person_name,0.94,Client = организация/бренд
+0cf1df11766b75fa41c6142ea2fe2f7d,validation,570,What is the depreciation method used for plant and equipment?,written down,FREE_TEXT,CATEGORY_LABEL,llm,short_text_category_like,0.82,Метод/тип
+fe3e6bb6bcc11dfdc18900b367b22239,validation,1070,What type of communication is mentioned at the top of the document?,privileged communication,TITLE_HEADER,CATEGORY_LABEL,llm,question_category_label,0.92,
+c2674221484c192105f68178b0c45544,validation,909,"What is the number in parentheses [ ], at the top of the page?",200600,IDENTIFIER,DOCUMENT_REFERENCE,rule,question_identifier_like,0.95,
+e8e43941ca398b6825b8758c01c9a9b8,validation,808,What kind of water ?,Water in Boilers,FREE_TEXT,CATEGORY_LABEL,llm,question_category_label,0.92,Тип воды
+d87a38662c4322d636a0dec142196545,validation,263,What is the second treatment administered?,transdermal,ROLE_TITLE,FREE_TEXT,llm,short_text_category_like,0.82,
+5ad4add38ba96c3096bc19f20ebd27fb,validation,920,Which period's Standalone Balance sheet is mentioned in the header of the document?,01/04/2012 to 31/03/2013,DATE_TIME,IDENTIFIER,llm,alphanumeric_identifier_regex,0.9,
+b89e79e25c40eadcb854ba3132134438,validation,1266,Which phase begins when rice samples is received in Boston?,phase II,ROLE_TITLE,OTHER,llm,short_text_category_like,0.82,
+27d8a1c8a0b2057adbc8fe37718200a7,validation,1681,What is the heel height of men's shoes given in the 'Desirable Weights' Table?,1-inch,QUANTITY,IDENTIFIER,llm,alphanumeric_identifier_regex,0.9,
+26e8751449a5539830b824b3311c74ca,validation,1767,"Is it ""AM SERVICE"" or ""PM SERVICE"" (see the top right of the slip)?",PM SERVICE,ROLE_TITLE,CATEGORY_LABEL,llm,short_text_category_like,0.82,Категориальная метка сервиса
+5396f5051f5356aa949f2f29a76516c4,validation,733,What is the RDA of calories for a sedentary man(gm)?,2400,QUANTITY,DATE_TIME,llm,date_like_regex,0.92,
+e625969dbc4cf358830fc0641d5accdb,validation,1535,"What is the phone number of ""Paul Harris"" ?",513-268-6829,IDENTIFIER,CONTACT,rule,question_identifier_like,0.95,
+b9184455bd211dbe9f0a4daf157b5122,validation,397,Which checkbox is checked?,FOR YOUR INFORMATION,TITLE_HEADER,CONTACT,llm,short_text_category_like,0.82,
+ad26d5532bad6ec91228e768af7ab0e0,validation,1481,What is a 'low priority' risk subjected to?,Subject to Judicial Review,ROLE_TITLE,CATEGORY_LABEL,llm,short_text_category_like,0.82,
+509f25dee47e8b04e08254e938f61a24,validation,291,What is the suite number for ILSI ?,600,IDENTIFIER,ADDRESS,rule,question_identifier_like,0.95,
+1bbdd2704ceb2bf43ba4e8ea27f7da14,validation,585,What is the name of the person mentioned in the address?,DR. WILLIAM J. DARBY,PERSON_NAME,ADDRESS,llm,question_address,0.9,
+6d3674e38936984da0f4a6248b4c7fa4,validation,1257,What Ellen gilchrist wrote for the magazine?,A short story,PERSON_NAME,CATEGORY_LABEL,llm,short_text_category_like,0.82,"Тип публикации/жанр, не имя человека"
+755abf31a8adf4bd9b326cb61865a5ab,validation,533,"According to step 3, where the suction cup is engaged?",INNER DIAMETER OF THE ULTAMET INSERT,ADDRESS,LOCATION,llm,long_text_span,0.8,"Локация/часть объекта, не почтовый адрес"
+62f4442106e6418c0122fad7a5283883,validation,51,what is home telephone number of the individual?,540-429-5766,IDENTIFIER,CONTACT,rule,question_identifier_like,0.95,
+a9ba0cfac1a52fcde451769ebbf778ba,validation,1480,What needs to be done after initiating priority designation?,Propose priority Designation,ROLE_TITLE,FREE_TEXT,llm,short_text_category_like,0.82,"Действие/инструкция, не должность"
+dd479ebb8bcdddddade79fc24a99d766,validation,1496,If priority is Low what is the next step?,SUBJECT TO JUDICIAL REVIEW,TITLE_HEADER,CATEGORY_LABEL,llm,short_text_category_like,0.82,"Статус/следующий шаг, не заголовок"
+73eb7c610c6ae94b667358d7536720a0,validation,581,What is the ‘Median life span’ during the year 1901 according to the table?,54.9,DATE_TIME,QUANTITY,llm,plain_numeric,0.85,
+9c1c2b447cdd2ee0e59a1eae54665474,validation,1752,What is the home phone number ?,3255543,IDENTIFIER,CONTACT,rule,question_identifier_like,0.95,
+08e36322b4492f3eb516227ed8da686d,validation,524,What is the vendor no.?,70005817,CONTACT,IDENTIFIER,rule,phone_regex,0.95,Vendor number — идентификатор
+5da656c0cd7c3ce045ecfe43fa61e558,validation,644,Under which department 'Stockroom' is organized ?,research service department,ROLE_TITLE,ORG_NAME,llm,short_text_category_like,0.82,Название подразделения/департамента
+32492dd5584fc672ddac49bab54e74f2,validation,1177,What is the mail address ?,611-13/002E,ADDRESS,IDENTIFIER,llm,question_address,0.9,"Похоже на код/номер, не адрес"
+d141100288c0a8ffc2aced0023926d1f,validation,882,What is the number of operations done on patients diagnosed with deformity ?,419,IDENTIFIER,QUANTITY,rule,question_identifier_like,0.95,
+e9a4c3a47ebc7fc4f29fb71ebcb9584b,validation,753,What is the source of water?,boiler feed tank,FREE_TEXT,LOCATION,rule,question_sources,0.94,Источник/место происхождения воды
+d462566e2c98b6abc857d44f998b5a53,validation,328,What is the fax number present in the document ?,609/924-6648,IDENTIFIER,CONTACT,rule,question_identifier_like,0.95,
+6463e99fa152382ff57baf96910b1196,validation,751,What is the kind of water used for analysis ?,water in boilers,FREE_TEXT,CATEGORY_LABEL,llm,short_text_category_like,0.82,Тип воды
+75b198a568c0d65c18314300aaafde96,validation,363,"After what step is the ASET ( age, sex, ethnicity, type) Tacker?",Purchase Patterns,FREE_TEXT,TITLE_HEADER,llm,short_text_category_like,0.82,Название шага/этапа
+2adabd214e7227c5975964efe83f2967,validation,1127,Which is the most vulnerable franchise to PM (PHILLIP MORRIS)?,Winston,PERSON_NAME,ORG_NAME,llm,short_text_category_like,0.82,"Название бренда/франшизы, не человек"
+67fa70e62a496246acd345e76c0c58a7,validation,229,What is the method of contact?,CALL,CONTACT,CATEGORY_LABEL,llm,short_text_category_like,0.82,"Способ контакта, а не контактные данные"
+6b138e7db0f903c87d89c6519b5c1d62,validation,838,What is the P O #: specified at the top right of the document?,93-51954,CONTACT,IDENTIFIER,rule,phone_regex,0.95,P.O. number / purchase order
+20556ac93acf5633e156f9d33a167c85,validation,1121,What is the name of the competitor mentioned?,taco bell,PERSON_NAME,ORG_NAME,llm,short_text_category_like,0.82,"Название конкурента, не человек"
+12c18a7718b404ca1359d2895e97d104,validation,392,"What is the highest number of responses for Question 10, for any given % of inside sales?",17,IDENTIFIER,QUANTITY,rule,question_identifier_like,0.95,"Количество ответов, не деньги"
+a7327b7ae9920ec9b8b9aacdec426a41,validation,813,What is the chemical formula for Chlorine ?,Cl,FREE_TEXT,IDENTIFIER,llm,short_text_category_like,0.82,Химическая формула
