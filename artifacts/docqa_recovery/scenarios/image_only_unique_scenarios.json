@@ -1,0 +1,44 @@
+[
+  {
+    "scenario_id": "original",
+    "ocr_strategy": "none",
+    "image_strategy": "none",
+    "context_window": 0
+  },
+  {
+    "scenario_id": "ocr_none__img_black__k_0",
+    "ocr_strategy": "none",
+    "image_strategy": "black",
+    "context_window": 0
+  },
+  {
+    "scenario_id": "ocr_none__img_white__k_0",
+    "ocr_strategy": "none",
+    "image_strategy": "white",
+    "context_window": 0
+  },
+  {
+    "scenario_id": "ocr_none__img_blur__k_0",
+    "ocr_strategy": "none",
+    "image_strategy": "blur",
+    "context_window": 0
+  },
+  {
+    "scenario_id": "ocr_none__img_black__k_20",
+    "ocr_strategy": "none",
+    "image_strategy": "black",
+    "context_window": 20
+  },
+  {
+    "scenario_id": "ocr_none__img_white__k_20",
+    "ocr_strategy": "none",
+    "image_strategy": "white",
+    "context_window": 20
+  },
+  {
+    "scenario_id": "ocr_none__img_blur__k_20",
+    "ocr_strategy": "none",
+    "image_strategy": "blur",
+    "context_window": 20
+  }
+]

@@ -92,28 +92,86 @@ README специально сделан максимально подробны
 
 ## 4. Field Labeling and Type System
 
-### 4.1 Initial Labeling
+### 4.1 Final Labeling Pipeline
 
-Первичная семантическая разметка выполняется через GigaChat в:
-- `src/label_docvqa_gigachat.py`
-- `notebooks/03_gigachat_field_labeling.ipynb`
+Финальная схема разметки, которая реально используется в проекте, реализована в:
 - `notebooks/04_gigachat_field_labeling_scalable.ipynb`
+- `src/label_docvqa_gigachat.py`
 
-Базовый закрытый список типов:
-- `DATE`
-- `AMOUNT`
-- `NAME`
-- `ID`
-- `ADDRESS`
-- `PHONE`
-- `ORG`
+`notebooks/03_gigachat_field_labeling.ipynb` в проекте играет роль pilot-эксперимента на небольшой подвыборке и не является основным источником финальной разметки.
+
+Логика `04`-ноутбука двухступенчатая:
+1. Сначала применяется `rule_based_label(question, answer)`.
+2. Если rule-based логика не нашла метку или уверенность недостаточна, вызывается `GigaChat`.
+
+Актуальные настройки пайплайна:
+- `USE_RULES_FIRST = True`
+- `RULE_ACCEPT_THRESHOLD = 0.93`
+- `MODEL = "GigaChat"`
+
+Это означает, что rule-based метка принимается сразу только если:
+- правило сработало;
+- confidence не ниже `0.93`.
+
+Во всех остальных случаях используется LLM-разметка.
+
+Базовый набор fine-grained field types в этом пайплайне не ограничивается коротким списком из pilot-ноутбука. В `04` и дальше по проекту используются более содержательные типы, в том числе:
+- `DATE_TIME`
+- `MONEY`
+- `QUANTITY`
 - `PERCENTAGE`
-- `REFERENCE`
-- `OTHER`
+- `IDENTIFIER`
+- `DOCUMENT_REFERENCE`
+- `PERSON_NAME`
+- `ORG_NAME`
+- `ADDRESS`
+- `CONTACT`
+- а также дополнительные типы вроде `LOCATION`, `ROLE_TITLE`, `FREE_TEXT`, `BOOLEAN`, `CATEGORY_LABEL`, `TITLE_HEADER`, `OTHER`
 
-Если в закрытый список поле не укладывается, модель могла предложить новый тип в `snake_case`.
+Для каждого примера дополнительно сохраняются:
+- `label_source` (`rule` или `llm`)
+- `rule_reason`
+- `rule_confidence`
+- `field_group`
+- `sensitivity`
 
-### 4.2 Coarse Field Types
+Это позволяет:
+- аудитировать работу rule-based части;
+- анализировать, где именно был вызван LLM;
+- оценивать качество разметки по golden subset.
+
+### 4.2 Golden Evaluation
+
+Качество финального labeling pipeline оценивается на вручную размеченном golden subset из `300` примеров.
+
+В `04`-ноутбуке для этой оценки используются:
+- `artifacts/field_labeling/gold_annotation/docvqa_gold_labels_v1.csv`
+- автоматически сохраняемые файлы:
+  - `...__gold_errors.csv`
+  - `...__gold_confusion_matrix.csv`
+  - `...__gold_metrics.txt`
+  - `...__gold_eval_merged.csv`
+
+Итоговые метрики на golden subset:
+- overall `accuracy = 0.8367`
+- `macro avg precision = 0.8385`
+- `macro avg recall = 0.8338`
+- `macro avg f1-score = 0.8264`
+- `weighted avg precision = 0.8510`
+- `weighted avg recall = 0.8367`
+- `weighted avg f1-score = 0.8353`
+- `support = 300`
+
+Дополнительно в `04` отдельно печатается качество по источнику метки:
+- `rule: n=132, accuracy=0.8788`
+- `llm: n=168, accuracy=0.8036`
+
+То есть финальная разметка в проекте — это не “чисто GigaChat labeling”, а hybrid pipeline:
+- сначала rules;
+- затем GigaChat как fallback;
+- затем проверка на golden subset из `300` вручную размеченных примеров.
+
+### 4.3 Coarse Field Types
 
 Для экспериментов используется укрупненная схема типов, заданная в `src/docqa_benchmark.py`:
 
@@ -136,17 +194,21 @@ README специально сделан максимально подробны
 - `ORG`
 - `CONTACT_ADR`
 
-### 4.3 Additional Metadata
+### 4.4 Additional Metadata
 
 В labels CSV и manifest дополнительно сохраняются:
 - `field_type`
 - `coarse_field_type`
 - `field_group`
 - `sensitivity`
+- `label_source`
+- `rule_reason`
+- `rule_confidence`
 
 Они позволяют:
 - строить стратифицированные выборки;
 - сравнивать leakage по типам полей;
+- отдельно анализировать contribution rule-based и llm-based labeling;
 - потенциально использовать sensitivity-aware analysis.
 
 ## 5. Benchmark Construction
