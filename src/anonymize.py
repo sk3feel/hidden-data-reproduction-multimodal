@@ -39,8 +39,8 @@ def _flatten_ocr_tokens(ocr_tokens: list[Any]) -> tuple[list[str], list[int]]:
 
 def find_all_answer_spans(ocr_tokens: list[Any], answer: str) -> list[tuple[int, int]]:
     """
-    Ищет все точные совпадения нормализованного ответа в OCR-токенах.
-    Возвращает список пар (start_idx, end_idx), где end_idx включителен.
+    Возвращает все точные совпадения нормализованного ответа в OCR-токенах.
+    Пары имеют вид (start_idx, end_idx), где end_idx включителен.
     """
     normalized_answer = normalize_text(answer)
     answer_parts = normalized_answer.split()
@@ -66,8 +66,8 @@ def find_all_answer_spans(ocr_tokens: list[Any], answer: str) -> list[tuple[int,
 
 def find_answer_span(ocr_tokens: list[Any], answer: str) -> tuple[int | None, int | None, bool]:
     """
-    Ищет точное совпадение нормализованного ответа в OCR-токенах.
-    Возвращает (start_idx, end_idx, found), где end_idx включителен.
+    Возвращает первое точное совпадение нормализованного ответа в OCR-токенах.
+    Формат: (start_idx, end_idx, found), где end_idx включителен.
     """
     spans = find_all_answer_spans(ocr_tokens, answer)
     if not spans:
@@ -77,13 +77,13 @@ def find_answer_span(ocr_tokens: list[Any], answer: str) -> tuple[int | None, in
 
 
 def _bbox_to_xyxy(bbox: Any, image_size: tuple[int, int] | None = None) -> tuple[int, int, int, int]:
-    # Случай 1: [x1, y1, x2, y2]
+    # Прямоугольник в формате [x1, y1, x2, y2].
     if isinstance(bbox, (list, tuple)) and len(bbox) == 4 and all(
         isinstance(v, (int, float)) for v in bbox
     ):
         x1, y1, x2, y2 = bbox
         coords = [float(x1), float(y1), float(x2), float(y2)]
-    # Случай 2: плоский полигон [x1, y1, x2, y2, ...]
+    # Плоский полигон [x1, y1, x2, y2, ...].
     elif (
         isinstance(bbox, (list, tuple))
         and len(bbox) >= 6
@@ -93,7 +93,7 @@ def _bbox_to_xyxy(bbox: Any, image_size: tuple[int, int] | None = None) -> tuple
         xs = [float(v) for v in bbox[0::2]]
         ys = [float(v) for v in bbox[1::2]]
         coords = [min(xs), min(ys), max(xs), max(ys)]
-    # Случай 3: полигон [[x,y], [x,y], ...]
+    # Полигон вида [[x, y], [x, y], ...].
     elif (
         isinstance(bbox, (list, tuple))
         and len(bbox) >= 2
@@ -107,8 +107,7 @@ def _bbox_to_xyxy(bbox: Any, image_size: tuple[int, int] | None = None) -> tuple
 
     if image_size is not None:
         width, height = image_size
-        # Масштабируем только нормализованные координаты [0, 1].
-        # В DocVQA bbox обычно уже в пикселях.
+        # Координаты [0, 1] переводим в пиксели.
         if max(coords) <= 1.0:
             coords = [coords[0] * width, coords[1] * height, coords[2] * width, coords[3] * height]
 
@@ -178,7 +177,7 @@ def evaluate_match_rate(dataset_subset: list[dict[str, Any]], output_path: str =
         "total_checked": total,
         "matched": matched,
         "match_rate": (matched / total) if total else 0.0,
-        "note": "Точное совпадение нормализованной n-граммы по OCR-токенам (используется первый вариант ответа).",
+        "note": "Точное совпадение нормализованной n-граммы по OCR-токенам; используется первый вариант ответа.",
         "examples": details[:20],
     }
 
@@ -194,9 +193,7 @@ def mask_image(
     strategy: str = "black",
     blur_sigma: float = 12.0,
 ) -> Image.Image:
-    """
-    Маскирует прямоугольник bbox и возвращает копию изображения.
-    """
+    """Маскирует bbox и возвращает копию изображения."""
     out = image.copy()
     x1, y1, x2, y2 = _bbox_to_xyxy(bbox, image_size=out.size)
 
@@ -215,7 +212,6 @@ def redact_ocr_tokens(ocr_tokens: list[Any], start_idx: int, end_idx: int, strat
     if strategy == "drop":
         return list(ocr_tokens[:start_idx]) + list(ocr_tokens[end_idx + 1 :])
 
-    # strategy == "mask"
     out: list[Any] = []
     for i, token in enumerate(ocr_tokens):
         if start_idx <= i <= end_idx:

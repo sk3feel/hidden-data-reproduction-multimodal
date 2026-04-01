@@ -79,7 +79,10 @@ def default_scenarios() -> list[Scenario]:
             for image_strategy, blur_sigma in image_variants:
                 if ocr_strategy == "none" and image_strategy == "none":
                     continue
-                image_id = _image_scenario_id(image_strategy=image_strategy, blur_sigma=blur_sigma)
+                image_id = _image_scenario_id(
+                    image_strategy=image_strategy,
+                    blur_sigma=blur_sigma,
+                )
                 scenarios.append(
                     Scenario(
                         scenario_id=f"ocr_{ocr_strategy}__img_{image_id}__k_{context_window}",

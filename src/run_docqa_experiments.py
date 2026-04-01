@@ -544,7 +544,7 @@ def run_predictions(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Prepare and run DocQA privacy-recovery experiments.",
+        description="Prepare and run DocQA recovery experiments.",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -559,10 +559,7 @@ def parse_args() -> argparse.Namespace:
         "--coarse-types",
         nargs="+",
         default=["DATE", "AMOUNT", "ID", "PERSON", "ORG", "CONTACT_ADR"],
-        help=(
-            "Coarse field types to include in the benchmark. "
-            "Default: DATE AMOUNT ID PERSON ORG CONTACT_ADR"
-        ),
+        help="Coarse field types to include in the benchmark",
     )
     prepare_parser.add_argument("--max-examples", type=int, default=None)
     prepare_parser.add_argument("--seed", type=int, default=42)

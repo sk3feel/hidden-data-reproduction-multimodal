@@ -42,7 +42,7 @@ def get_secret(name: str, default: str | None = None, required: bool = False) ->
         value = os.getenv(name, default)
 
     if required and not value:
-        raise RuntimeError(f"Required secret is missing: {name}")
+        raise RuntimeError(f"Missing required secret: {name}")
     return value
 
 
@@ -59,7 +59,7 @@ def ensure_repo_cloned(repo_url: str | None = None, clone_dir: Path = DEFAULT_CL
         return clone_dir
 
     if not repo_url:
-        raise RuntimeError("Repository is not cloned and COURSE_WORK2026_REPO_URL is not set.")
+        raise RuntimeError("Repo is not cloned and COURSE_WORK2026_REPO_URL is empty.")
 
     clone_dir.parent.mkdir(parents=True, exist_ok=True)
     _run(["git", "clone", repo_url, str(clone_dir)])
@@ -69,7 +69,7 @@ def ensure_repo_cloned(repo_url: str | None = None, clone_dir: Path = DEFAULT_CL
 def install_requirements(project_root: Path) -> None:
     requirements_path = project_root / "requirements.txt"
     if not requirements_path.exists():
-        raise FileNotFoundError(f"requirements.txt not found: {requirements_path}")
+        raise FileNotFoundError(f"Missing requirements.txt: {requirements_path}")
     _run([sys.executable, "-m", "pip", "install", "-r", str(requirements_path)])
 
 

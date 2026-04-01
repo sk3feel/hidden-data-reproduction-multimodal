@@ -23,7 +23,7 @@ def _to_pil_image(image_obj: Any) -> Image.Image | None:
         if image_obj.get("path"):
             return Image.open(image_obj["path"]).convert("RGB")
 
-    # Фолбэк для array-like объектов.
+    # Запасной путь для array-like объектов.
     return Image.fromarray(image_obj).convert("RGB")
 
 
@@ -32,8 +32,8 @@ def extract_ocr_tokens(example: dict[str, Any]) -> list[dict[str, Any]]:
     Разворачивает OCR-слова в порядок чтения.
 
     Возвращает список вида {"text": str, "bbox": Any}.
-    Для pixparse/docvqa-single-page-questions OCR хранится в:
-    example["ocr_results"]["lines"][...]["words"][...]
+    В pixparse/docvqa-single-page-questions OCR лежит в
+    example["ocr_results"]["lines"][...]["words"][...].
     """
     tokens: list[dict[str, Any]] = []
 
@@ -55,7 +55,7 @@ def extract_ocr_tokens(example: dict[str, Any]) -> list[dict[str, Any]]:
 
 def load_docvqa(split: str = "validation", limit: int | None = None) -> list[dict[str, Any]]:
     """
-    Загружает DocVQA из Hugging Face и возвращает обычный список словарей.
+    Загружает DocVQA из Hugging Face и возвращает список словарей.
 
     По умолчанию используется `pixparse/docvqa-single-page-questions`.
     """
@@ -68,9 +68,7 @@ def load_docvqa(split: str = "validation", limit: int | None = None) -> list[dic
 
 
 def show_example(example: dict[str, Any]) -> None:
-    """
-    Печатает вопрос/ответы и первые OCR-токены, затем показывает изображение.
-    """
+    """Печатает вопрос, ответы и первые OCR-токены, затем показывает изображение."""
     import matplotlib.pyplot as plt
 
     image = _to_pil_image(example.get("image"))

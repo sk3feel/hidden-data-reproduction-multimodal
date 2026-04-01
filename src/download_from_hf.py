@@ -63,7 +63,7 @@ def download_dataset(
         for archive_dir_name, relative_target in EXTRACT_TARGETS.items():
             source_dir = extract_root / archive_dir_name
             if not source_dir.exists():
-                raise FileNotFoundError(f"Archive is missing expected directory: {archive_dir_name}")
+                raise FileNotFoundError(f"Archive is missing directory: {archive_dir_name}")
             destination_dir = local_dir / relative_target
             _replace_tree(source_dir, destination_dir)
             extracted_paths[archive_dir_name] = str(destination_dir.resolve())
@@ -82,9 +82,9 @@ def download_dataset(
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Download and extract project data artifacts from Hugging Face Hub.")
-    parser.add_argument("--repo-id", default=DEFAULT_REPO_ID, help="HF dataset repo, e.g. sk3feel/docvqa-privacy-data")
-    parser.add_argument("--local-dir", default=str(DEFAULT_LOCAL_DIR), help="Where to place downloaded artifacts")
+    parser = argparse.ArgumentParser(description="Download project artifacts from Hugging Face Hub.")
+    parser.add_argument("--repo-id", default=DEFAULT_REPO_ID, help="HF dataset repo, for example sk3feel/docvqa-privacy-data")
+    parser.add_argument("--local-dir", default=str(DEFAULT_LOCAL_DIR), help="Local directory for extracted artifacts")
     return parser.parse_args()
 
 

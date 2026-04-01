@@ -218,7 +218,7 @@ def load_env_file(path: Path) -> None:
     if not path.exists():
         return
 
-    # utf-8-sig removes BOM if file was created by tools that add it.
+    # utf-8-sig убирает BOM, если файл записали сторонние инструменты.
     for raw_line in path.read_text(encoding="utf-8-sig").splitlines():
         line = raw_line.strip()
         if not line or line.startswith("#") or "=" not in line:
@@ -244,7 +244,7 @@ def load_docvqa_from_local_cache(split: str, limit: int | None = None) -> list[d
     if not hash_dirs:
         raise FileNotFoundError(f"No hash directories in: {base}")
 
-    # Use the freshest cache snapshot.
+    # Берем самый свежий снимок кеша.
     hash_dirs.sort(key=lambda p: p.stat().st_mtime, reverse=True)
     chosen = hash_dirs[0]
     shard_paths = sorted(chosen.glob(f"docvqa-single-page-questions-{split}-*.arrow"))
@@ -361,7 +361,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    # Load .env from project root so credentials can be kept out of notebooks/code.
+    # Загружаем .env из корня проекта, чтобы не хранить секреты в коде и ноутбуках.
     project_root = Path(__file__).resolve().parents[1]
     load_env_file(project_root / ".env")
 

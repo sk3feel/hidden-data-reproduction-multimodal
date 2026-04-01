@@ -95,8 +95,7 @@ def main() -> int:
         "manifest_jsonl_exists",
         manifest_exists,
         (
-            f"found {MANIFEST_PATH.name}; current pipeline stores manifest as JSONL, "
-            "not CSV"
+            f"found {MANIFEST_PATH.name}; the pipeline stores JSONL, not CSV"
         ) if manifest_exists else f"missing {MANIFEST_PATH}",
     )
     if not manifest_exists:

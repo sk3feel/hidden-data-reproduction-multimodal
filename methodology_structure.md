@@ -1,10 +1,10 @@
-# Extracted Coursework Methodology Structure
+# Coursework Methodology Notes
 
 Source file: [docs/Курсовые проекты.txt](c:/Users/scfeel/DEV/hse/3year-2sem/course_work2026/docs/%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B.txt)
 
 ## 1. Report Structure
 
-### General project types and expected emphasis
+### Project types and expected emphasis
 
 #### Research project
 Quoted requirement:
@@ -17,7 +17,7 @@ Quoted novelty/usefulness requirement:
 
 > Важно, что проект любого типа должен обладать некоторым уровнем новизны и/или пользы
 
-Examples listed in the document:
+Examples from the guideline:
 - `предлагаются новые методы/модели`
 - `проводится тестирование существующих методов на новых задачах, на которых они ранее не применялись`
 - `проводится анализ/сравнение методов, ранее не встречающийся в литературе`
@@ -61,18 +61,16 @@ Quoted list:
 
 ### Recommended report structure
 
-Quoted heading:
-
-> Рекомендуется следующая структура отчёта:
+The guideline recommends the following report structure:
 
 #### 1. Title page
 - Title: `Титульный лист`
 - Requirement: `на том же языке, на котором написан текст работы`
-- Mandatory element: title page
+- Required: title page
 
 #### 2. Table of contents
 - Title: `Оглавление`
-- Mandatory element: table of contents
+- Required: table of contents
 
 #### 3. Abstract
 - Title: `Аннотация`
@@ -173,7 +171,7 @@ Quoted requirements:
 
 > В отчете должны быть подробно описаны все составляющие работы.
 
-Quoted approximate volume:
+Approximate volume from the guideline:
 - `Работа по теоретической информатике ... может занимать 10 – 15 страниц.`
 - `«Стандартным» объемом индивидуального проекта (и исследовательского, и программного) можно считать примерно 20 страниц.`
 - `Объем группового проекта больше объема индивидуального проекта пропорционально числу участников.`
@@ -208,7 +206,7 @@ Quoted requirements:
 
 > в экспериментальной части работы не забудьте указать объёмные характеристики (размеры выборок; объём баз данных; время, затраченное на проведение экспериментов; число проанализированных вариантов; число строк кода и объём кода в килобайтах; и т.п.)
 
-### Work plan document submitted mid-year
+### Mid-year work plan
 
 Quoted requirements:
 

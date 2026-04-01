@@ -1,5 +1,5 @@
 <!-- BEGIN: latex-export-24_final_analysis_v2.ipynb -->
-## Exported metrics: 24_final_analysis_v2.ipynb
+## Metrics exported from 24_final_analysis_v2.ipynb
 
 | Metric                                                                                                                                     |         Value | Linked Graph                              |
 |:-------------------------------------------------------------------------------------------------------------------------------------------|--------------:|:------------------------------------------|

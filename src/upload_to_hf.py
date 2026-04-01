@@ -93,10 +93,10 @@ def upload_dataset(
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Upload project data artifacts to Hugging Face Hub as a single tar.gz dataset bundle.")
-    parser.add_argument("--repo-id", default=DEFAULT_REPO_ID, help="Target HF dataset repo, e.g. sk3feel/docvqa-privacy-data")
-    parser.add_argument("--artifacts-root", default=str(ARTIFACTS_ROOT), help="Local artifacts root to archive from")
-    parser.add_argument("--public", action="store_true", help="Create or update the dataset repo as public")
+    parser = argparse.ArgumentParser(description="Upload project artifacts to Hugging Face Hub.")
+    parser.add_argument("--repo-id", default=DEFAULT_REPO_ID, help="Target HF dataset repo, for example sk3feel/docvqa-privacy-data")
+    parser.add_argument("--artifacts-root", default=str(ARTIFACTS_ROOT), help="Local artifacts root")
+    parser.add_argument("--public", action="store_true", help="Upload to a public dataset repo")
     return parser.parse_args()
 
 
@@ -104,7 +104,7 @@ def main() -> None:
     args = parse_args()
     hf_token = os.getenv("HF_TOKEN")
     if not hf_token:
-        raise RuntimeError("HF_TOKEN is not set in the environment.")
+        raise RuntimeError("HF_TOKEN is not set.")
 
     summary = upload_dataset(
         repo_id=args.repo_id,

@@ -46,7 +46,11 @@ def _parse_legacy_combined_scenario(scenario_id: str) -> tuple[str, str, int]:
         raise ValueError(f"Unsupported scenario_id: {scenario_id}")
 
     ocr_strategy, image_part, context_window = match.groups()
-    ocr_id = f"ocr_{ocr_strategy}_k{context_window}" if ocr_strategy != "none" else "ocr_none"
+    ocr_id = (
+        f"ocr_{ocr_strategy}_k{context_window}"
+        if ocr_strategy != "none"
+        else "ocr_none"
+    )
     image_id = "original" if image_part == "none" else f"img_{image_part}"
     return image_id, ocr_id, int(context_window)
 

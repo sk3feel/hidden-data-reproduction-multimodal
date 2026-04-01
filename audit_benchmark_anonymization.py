@@ -402,7 +402,7 @@ def audit_benchmark(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Full-pass audit for benchmark anonymization.",
+        description="Run a full audit for benchmark anonymization.",
     )
     parser.add_argument(
         "--benchmark-dir",

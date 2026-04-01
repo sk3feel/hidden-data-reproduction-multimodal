@@ -39,7 +39,7 @@ def build_qwen2vl_record(record: dict[str, Any]) -> dict[str, Any]:
                     {
                         "type": "text",
                         "text": (
-                            "Answer the document question with a short span copied from the "
+                            "Answer with a short span copied from the "
                             f"document when possible.\nQuestion: {question}"
                         ),
                     },

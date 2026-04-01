@@ -49,10 +49,10 @@ def best_metric_over_answers(
 
 
 def build_answer_pool(records: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
-    pools: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    answer_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for record in records:
-        pools[str(record["coarse_field_type"])].append(record)
-    return dict(pools)
+        answer_groups[str(record["coarse_field_type"])].append(record)
+    return dict(answer_groups)
 
 
 def estimate_random_baseline(

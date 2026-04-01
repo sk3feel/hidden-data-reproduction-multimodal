@@ -3,7 +3,7 @@
 
 ### mia_bar_baseline_vs_finetuned_v2.pdf
 - Source: 24_final_analysis_v2.ipynb, MIA comparison cell
-- Description: Bar charts of baseline and fine-tuned MIA AUC-ROC for confidence and loss.
+- Summary: Bar charts of baseline and fine-tuned MIA AUC-ROC for confidence and loss.
 - Axes: X = Model, Y = AUC-ROC
 - Series: stage = baseline, fine-tuned; panels = confidence, loss
 - Key values:
@@ -23,7 +23,7 @@
 
 ### mia_confidence_histograms_v2.pdf
 - Source: 24_final_analysis_v2.ipynb, confidence histogram cell
-- Description: Confidence histograms for seen and unseen examples, faceted by model.
+- Summary: Confidence histograms for seen and unseen examples, faceted by model.
 - Axes: X = Average answer log-probability, Y = Frequency
 - Series: seen, unseen; one panel per model
 - Key values:
@@ -39,7 +39,7 @@
 
 ### mia_heatmap_model_fieldtype_auc_v2.pdf
 - Source: 24_final_analysis_v2.ipynb, field-type MIA heatmap cell
-- Description: Heatmap of MIA AUC by model and coarse field type.
+- Summary: Heatmap of MIA AUC by model and coarse field type.
 - Axes: X = Coarse field type, Y = Model
 - Series: heatmap values = auc_confidence
 - Key values:
@@ -55,7 +55,7 @@
 
 ### mia_scaling_auc_v2.pdf
 - Source: 24_final_analysis_v2.ipynb, scaling plot cell
-- Description: Scaling plot of model size versus MIA AUC.
+- Summary: Scaling plot of model size versus MIA AUC.
 - Axes: X = log10(number of parameters), Y = AUC-ROC
 - Series: confidence, loss
 - Key values:
@@ -68,7 +68,7 @@
 
 ### extraction_heatmap_image_only_seen_v2.pdf
 - Source: 24_final_analysis_v2.ipynb, image-only extraction heatmap cell
-- Description: Heatmap of corrected EM for seen image-only extraction scenarios.
+- Summary: Heatmap of corrected EM for seen image-only extraction scenarios.
 - Axes: X = Image scenario, Y = Model
 - Series: heatmap values = corrected_em
 - Key values:
@@ -90,7 +90,7 @@
 
 ### extraction_heatmap_image_ocr_seen_v2.pdf
 - Source: 24_final_analysis_v2.ipynb, image+OCR extraction heatmap cell
-- Description: Heatmap of corrected EM for seen image+OCR extraction scenarios.
+- Summary: Heatmap of corrected EM for seen image+OCR extraction scenarios.
 - Axes: X = Scenario, Y = Model
 - Series: heatmap values = corrected_em
 - Key values:
@@ -102,7 +102,7 @@
 
 ### extraction_bar_fieldtype_img_black_v2.pdf
 - Source: 24_final_analysis_v2.ipynb, field-type extraction barplot cell
-- Description: Bar plot of corrected EM by coarse field type for img_black.
+- Summary: Bar plot of corrected EM by coarse field type for img_black.
 - Axes: X = Coarse field type, Y = Corrected EM
 - Series: one bar group per model
 - Key values:
@@ -130,7 +130,7 @@
 
 ### extraction_blur_sigma_curve_v2.pdf
 - Source: 24_final_analysis_v2.ipynb, blur robustness cell
-- Description: Corrected EM as a function of blur sigma.
+- Summary: Corrected EM as a function of blur sigma.
 - Axes: X = Blur sigma, Y = Corrected EM
 - Series: one line per model
 - Key values:
@@ -146,7 +146,7 @@
 
 ### extraction_mode_compare_v2.pdf
 - Source: 24_final_analysis_v2.ipynb, mode comparison cell
-- Description: Comparison of image-only and image+OCR extraction modes.
+- Summary: Comparison of image-only and image+OCR extraction modes.
 - Axes: X = Model, Y = Mean corrected EM
 - Series: image_only, image+OCR
 - Key values:
@@ -159,7 +159,7 @@
 
 ### mia_vs_extraction_scatter_v2.pdf
 - Source: 24_final_analysis_v2.ipynb, MIA-versus-extraction cell
-- Description: Scatter plot of MIA loss AUC versus extraction corrected EM.
+- Summary: Scatter plot of MIA loss AUC versus extraction corrected EM.
 - Axes: X = MIA loss AUC-ROC, Y = Extraction corrected EM (img_black, seen)
 - Series: one point per model
 - Key values:
@@ -172,7 +172,7 @@
 
 ### qualitative_successful_extractions_v2.pdf
 - Source: 24_final_analysis_v2.ipynb, qualitative examples cell
-- Description: Grid of successful qualitative extraction examples.
+- Summary: Grid of successful qualitative extraction examples.
 - Axes: X = None, Y = None
 - Series: image grid
 - Key values:
@@ -196,7 +196,7 @@
 
 ### mia_bar_baseline_vs_finetuned_v1.pdf
 - Source: 24_final_analysis.ipynb, MIA comparison cell
-- Description: Bar charts of baseline and fine-tuned MIA AUC-ROC for confidence and loss.
+- Summary: Bar charts of baseline and fine-tuned MIA AUC-ROC for confidence and loss.
 - Axes: X = Model, Y = AUC-ROC
 - Series: stage = baseline, fine-tuned; panels = confidence, loss
 - Key values:
@@ -216,7 +216,7 @@
 
 ### mia_confidence_histograms_v1.pdf
 - Source: 24_final_analysis.ipynb, confidence histogram cell
-- Description: Confidence histograms for seen and unseen examples, faceted by model.
+- Summary: Confidence histograms for seen and unseen examples, faceted by model.
 - Axes: X = Average answer log-probability, Y = Frequency
 - Series: seen, unseen; one panel per model
 - Key values:
@@ -232,7 +232,7 @@
 
 ### mia_heatmap_model_fieldtype_auc_v1.pdf
 - Source: 24_final_analysis.ipynb, field-type MIA heatmap cell
-- Description: Heatmap of MIA AUC by model and coarse field type.
+- Summary: Heatmap of MIA AUC by model and coarse field type.
 - Axes: X = Coarse field type, Y = Model
 - Series: heatmap values = auc_confidence
 - Key values:
@@ -260,7 +260,7 @@
 
 ### mia_scaling_auc_v1.pdf
 - Source: 24_final_analysis.ipynb, scaling plot cell
-- Description: Scaling plot of model size versus MIA AUC.
+- Summary: Scaling plot of model size versus MIA AUC.
 - Axes: X = log10(number of parameters), Y = AUC-ROC
 - Series: confidence, loss
 - Key values:
@@ -273,7 +273,7 @@
 
 ### extraction_heatmap_image_only_seen_v1.pdf
 - Source: 24_final_analysis.ipynb, image-only extraction heatmap cell
-- Description: Heatmap of corrected EM for seen image-only extraction scenarios.
+- Summary: Heatmap of corrected EM for seen image-only extraction scenarios.
 - Axes: X = Image scenario, Y = Model
 - Series: heatmap values = corrected_em
 - Key values:
@@ -295,7 +295,7 @@
 
 ### extraction_heatmap_image_ocr_seen_v1.pdf
 - Source: 24_final_analysis.ipynb, image+OCR extraction heatmap cell
-- Description: Heatmap of corrected EM for seen image+OCR extraction scenarios.
+- Summary: Heatmap of corrected EM for seen image+OCR extraction scenarios.
 - Axes: X = Scenario, Y = Model
 - Series: heatmap values = corrected_em
 - Key values:
@@ -307,7 +307,7 @@
 
 ### extraction_bar_fieldtype_img_black_v1.pdf
 - Source: 24_final_analysis.ipynb, field-type extraction barplot cell
-- Description: Bar plot of corrected EM by coarse field type for img_black.
+- Summary: Bar plot of corrected EM by coarse field type for img_black.
 - Axes: X = Coarse field type, Y = Corrected EM
 - Series: one bar group per model
 - Key values:
@@ -335,7 +335,7 @@
 
 ### extraction_blur_sigma_curve_v1.pdf
 - Source: 24_final_analysis.ipynb, blur robustness cell
-- Description: Corrected EM as a function of blur sigma.
+- Summary: Corrected EM as a function of blur sigma.
 - Axes: X = Blur sigma, Y = Corrected EM
 - Series: one line per model
 - Key values:
@@ -351,7 +351,7 @@
 
 ### extraction_mode_compare_v1.pdf
 - Source: 24_final_analysis.ipynb, mode comparison cell
-- Description: Comparison of image-only and image+OCR extraction modes.
+- Summary: Comparison of image-only and image+OCR extraction modes.
 - Axes: X = Model, Y = Mean corrected EM
 - Series: image_only, image+OCR
 - Key values:
@@ -364,7 +364,7 @@
 
 ### mia_vs_extraction_scatter_v1.pdf
 - Source: 24_final_analysis.ipynb, MIA-versus-extraction cell
-- Description: Scatter plot of MIA loss AUC versus extraction corrected EM.
+- Summary: Scatter plot of MIA loss AUC versus extraction corrected EM.
 - Axes: X = MIA loss AUC-ROC, Y = Extraction corrected EM (img_black, seen)
 - Series: one point per model
 - Key values:
@@ -377,7 +377,7 @@
 
 ### qualitative_successful_extractions_v1.pdf
 - Source: 24_final_analysis.ipynb, qualitative examples cell
-- Description: Grid of successful qualitative extraction examples.
+- Summary: Grid of successful qualitative extraction examples.
 - Axes: X = None, Y = None
 - Series: image grid
 - Key values:

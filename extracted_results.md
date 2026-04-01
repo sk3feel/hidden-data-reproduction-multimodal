@@ -1,26 +1,26 @@
 # Curated Experimental Results
 
-This file is a reduced, thesis-oriented version of the raw extraction dump.
+This file is a shorter, thesis-oriented version of the raw extraction dump.
 
-Included here:
-- the field labeling results that are most likely useful for the methodology section;
-- the final experimental notebooks:
+Included:
+- field labeling results that are useful for the methodology section;
+- final experimental notebooks:
   - `20-24`
   - `20-24_v2`
-- only the outputs and tables that are most likely useful in the thesis text.
+- outputs and tables that are likely to be cited in the thesis text.
 
-Excluded from this file:
+Excluded:
 - project tree;
 - service scripts;
 - helper utilities;
 - low-level implementation details that are unlikely to be cited in the thesis;
-- noisy intermediate outputs that do not add methodological or experimental value.
+- intermediate outputs that do not add methodological or experimental value.
 
-## Supporting Material Likely Useful for the Thesis
+## Supporting Material For The Thesis
 
 ### `src/docqa_benchmark.py`
 
-**Description:** Benchmark construction and coarse field type mapping used by the experimental notebooks.
+**Description:** Builds the benchmark and maps fine-grained labels to coarse field types used in the experimental notebooks.
 
 **Useful mappings from code:**
 
@@ -60,7 +60,7 @@ Excluded from this file:
 
 ### `src/docqa_metrics.py`
 
-**Description:** Metric definitions used by extraction notebooks.
+**Description:** Metric definitions used in the extraction notebooks.
 
 **Useful metric definitions from code:**
 - `best_metric_over_answers(prediction, answers)` returns the best `exact_match` and `token_f1` over all acceptable answers.
@@ -71,7 +71,7 @@ Excluded from this file:
 
 ### `notebooks/03_gigachat_field_labeling.ipynb`
 
-**Description:** Pilot field labeling on a smaller subset of DocVQA question-answer pairs.
+**Description:** Pilot field labeling on a small subset of DocVQA question-answer pairs.
 
 **Useful parameters:**
 - `OUTPUT_CSV = PROJECT_ROOT / "docvqa_field_types_pilot.csv"`
@@ -112,7 +112,7 @@ field_type  count
 
 ### `notebooks/04_gigachat_field_labeling_scalable.ipynb`
 
-**Description:** Full scalable field labeling pipeline with rules + LLM and evaluation against a gold subset.
+**Description:** Main scalable field labeling pipeline with rules + LLM and evaluation on a gold subset.
 
 **Useful parameters from code:**
 - label source can be `rule` or `llm`
